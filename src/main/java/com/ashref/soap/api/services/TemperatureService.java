@@ -11,7 +11,7 @@ import com.ashref.soap.api.temperature.MinTemperatureRequest;
 import com.ashref.soap.api.temperature.MinTemperatureResponse;
 
 @Service
-public class TemplateService {
+public class TemperatureService {
 	@Autowired
 	private Jaxb2Marshaller marshaller;
 	private WebServiceTemplate template;
