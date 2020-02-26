@@ -7,6 +7,8 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Service;
 import org.springframework.ws.client.core.WebServiceTemplate;
 
+import com.ashref.soap.api.temperature.MaxTemperatureRequest;
+import com.ashref.soap.api.temperature.MaxTemperatureResponse;
 import com.ashref.soap.api.temperature.MinTemperatureRequest;
 import com.ashref.soap.api.temperature.MinTemperatureResponse;
 
@@ -24,5 +26,9 @@ public class TemperatureService {
 	
 	public MinTemperatureResponse consumeMin(MinTemperatureRequest request) {
 		return (MinTemperatureResponse) template.marshalSendAndReceive(URL, request);
+	}
+	
+	public MaxTemperatureResponse consumeMax(MaxTemperatureRequest request) {
+		return (MaxTemperatureResponse) template.marshalSendAndReceive(URL, request);
 	}
 }
