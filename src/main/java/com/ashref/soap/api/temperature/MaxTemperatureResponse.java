@@ -5,7 +5,6 @@
 // Generated on: 2020.02.26 at 11:16:47 PM GMT+01:00 
 //
 
-
 package com.ashref.soap.api.temperature;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -34,28 +35,26 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "result"
-})
+@XmlType(name = "", propOrder = { "result" })
 @XmlRootElement(name = "MaxTemperatureResponse")
 public class MaxTemperatureResponse {
 
-    protected int result;
+	protected int result;
 
-    /**
-     * Gets the value of the result property.
-     * 
-     */
-    public int getResult() {
-        return result;
-    }
+	/**
+	 * Gets the value of the result property.
+	 * 
+	 */
+	public int getResult() {
+		return result;
+	}
 
-    /**
-     * Sets the value of the result property.
-     * 
-     */
-    public void setResult(int value) {
-        this.result = value;
-    }
+	/**
+	 * Sets the value of the result property.
+	 * 
+	 */
+	public void setResult(int value) {
+		this.result = value;
+	}
 
 }

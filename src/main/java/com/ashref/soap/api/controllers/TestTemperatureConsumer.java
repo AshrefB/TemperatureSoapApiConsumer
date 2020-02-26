@@ -21,24 +21,25 @@ import com.ashref.soap.api.temperature.MinTemperatureResponse;
 public class TestTemperatureConsumer {
 	@Autowired
 	private TemperatureService service;
-	
+
 	@PostMapping("/min")
 	public MinTemperatureResponse testConsumeMin(@RequestBody MinTemperatureRequest request) {
 		return service.consumeMin(request);
 	}
-	
+
 	@PostMapping("/max")
 	public MaxTemperatureResponse testConsumeMax(@RequestBody MaxTemperatureRequest request) {
 		return service.consumeMax(request);
 	}
-	
+
 	@PostMapping("/avg")
 	public AvgTemperatureResponse testConsumeAvg(@RequestBody AvgTemperatureRequest request) {
 		return service.consumeAvg(request);
 	}
-	
+
 	@PostMapping("/closest-to-zero")
-	public ClosestToZeroTemperatureResponse testConsumeClosestToZero(@RequestBody ClosestToZeroTemperatureRequest request) {
+	public ClosestToZeroTemperatureResponse testConsumeClosestToZero(
+			@RequestBody ClosestToZeroTemperatureRequest request) {
 		return service.consumeClosestToZero(request);
 	}
 }

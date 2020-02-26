@@ -22,24 +22,24 @@ public class TemperatureService {
 	private Jaxb2Marshaller marshaller;
 	private WebServiceTemplate template;
 	private final String URL = "http://localhost:8081/api";
-	
+
 	@PostConstruct
 	public void init() {
 		template = new WebServiceTemplate(marshaller);
 	}
-	
+
 	public MinTemperatureResponse consumeMin(MinTemperatureRequest request) {
 		return (MinTemperatureResponse) template.marshalSendAndReceive(URL, request);
 	}
-	
+
 	public MaxTemperatureResponse consumeMax(MaxTemperatureRequest request) {
 		return (MaxTemperatureResponse) template.marshalSendAndReceive(URL, request);
 	}
-	
+
 	public AvgTemperatureResponse consumeAvg(AvgTemperatureRequest request) {
 		return (AvgTemperatureResponse) template.marshalSendAndReceive(URL, request);
 	}
-	
+
 	public ClosestToZeroTemperatureResponse consumeClosestToZero(ClosestToZeroTemperatureRequest request) {
 		return (ClosestToZeroTemperatureResponse) template.marshalSendAndReceive(URL, request);
 	}
