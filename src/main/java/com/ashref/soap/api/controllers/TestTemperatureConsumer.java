@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ashref.soap.api.services.TemperatureService;
 import com.ashref.soap.api.temperature.AvgTemperatureRequest;
 import com.ashref.soap.api.temperature.AvgTemperatureResponse;
+import com.ashref.soap.api.temperature.ClosestToZeroTemperatureRequest;
+import com.ashref.soap.api.temperature.ClosestToZeroTemperatureResponse;
 import com.ashref.soap.api.temperature.MaxTemperatureRequest;
 import com.ashref.soap.api.temperature.MaxTemperatureResponse;
 import com.ashref.soap.api.temperature.MinTemperatureRequest;
@@ -33,5 +35,10 @@ public class TestTemperatureConsumer {
 	@PostMapping("/avg")
 	public AvgTemperatureResponse testConsumeAvg(@RequestBody AvgTemperatureRequest request) {
 		return service.consumeAvg(request);
+	}
+	
+	@PostMapping("/closest-to-zero")
+	public ClosestToZeroTemperatureResponse testConsumeClosestToZero(@RequestBody ClosestToZeroTemperatureRequest request) {
+		return service.consumeClosestToZero(request);
 	}
 }
