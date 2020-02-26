@@ -9,6 +9,8 @@ import org.springframework.ws.client.core.WebServiceTemplate;
 
 import com.ashref.soap.api.temperature.AvgTemperatureRequest;
 import com.ashref.soap.api.temperature.AvgTemperatureResponse;
+import com.ashref.soap.api.temperature.ClosestToZeroTemperatureRequest;
+import com.ashref.soap.api.temperature.ClosestToZeroTemperatureResponse;
 import com.ashref.soap.api.temperature.MaxTemperatureRequest;
 import com.ashref.soap.api.temperature.MaxTemperatureResponse;
 import com.ashref.soap.api.temperature.MinTemperatureRequest;
@@ -36,5 +38,9 @@ public class TemperatureService {
 	
 	public AvgTemperatureResponse consumeAvg(AvgTemperatureRequest request) {
 		return (AvgTemperatureResponse) template.marshalSendAndReceive(URL, request);
+	}
+	
+	public ClosestToZeroTemperatureResponse consumeClosestToZero(ClosestToZeroTemperatureRequest request) {
+		return (ClosestToZeroTemperatureResponse) template.marshalSendAndReceive(URL, request);
 	}
 }
