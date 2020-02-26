@@ -1,0 +1,195 @@
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="http://www.ashref.com/soap/api/temperature"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.ashref.com/soap/api/temperature"
+	targetNamespace="http://www.ashref.com/soap/api/temperature">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified"
+			targetNamespace="http://www.ashref.com/soap/api/temperature">
+			<xsd:element name="MinTemperatureRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="unbounded" name="temperatures"
+							type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="MinTemperatureResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="result" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="MaxTemperatureRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="unbounded" name="temperatures"
+							type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="MaxTemperatureResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="result" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AvgTemperatureRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="unbounded" name="temperatures"
+							type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AvgTemperatureResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="result" type="xsd:double" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ClosestToZeroTemperatureRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="unbounded" name="temperatures"
+							type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ClosestToZeroTemperatureResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="result" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="AvgTemperatureResponse">
+		<wsdl:part element="tns:AvgTemperatureResponse"
+			name="AvgTemperatureResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="AvgTemperatureRequest">
+		<wsdl:part element="tns:AvgTemperatureRequest"
+			name="AvgTemperatureRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="MaxTemperatureResponse">
+		<wsdl:part element="tns:MaxTemperatureResponse"
+			name="MaxTemperatureResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ClosestToZeroTemperatureRequest">
+		<wsdl:part element="tns:ClosestToZeroTemperatureRequest"
+			name="ClosestToZeroTemperatureRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="MinTemperatureRequest">
+		<wsdl:part element="tns:MinTemperatureRequest"
+			name="MinTemperatureRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="MinTemperatureResponse">
+		<wsdl:part element="tns:MinTemperatureResponse"
+			name="MinTemperatureResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ClosestToZeroTemperatureResponse">
+		<wsdl:part element="tns:ClosestToZeroTemperatureResponse"
+			name="ClosestToZeroTemperatureResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="MaxTemperatureRequest">
+		<wsdl:part element="tns:MaxTemperatureRequest"
+			name="MaxTemperatureRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="TemperatureIndicator">
+		<wsdl:operation name="AvgTemperature">
+			<wsdl:input message="tns:AvgTemperatureRequest"
+				name="AvgTemperatureRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:AvgTemperatureResponse"
+				name="AvgTemperatureResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="MaxTemperature">
+			<wsdl:input message="tns:MaxTemperatureRequest"
+				name="MaxTemperatureRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:MaxTemperatureResponse"
+				name="MaxTemperatureResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ClosestToZeroTemperature">
+			<wsdl:input message="tns:ClosestToZeroTemperatureRequest"
+				name="ClosestToZeroTemperatureRequest">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:ClosestToZeroTemperatureResponse"
+				name="ClosestToZeroTemperatureResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="MinTemperature">
+			<wsdl:input message="tns:MinTemperatureRequest"
+				name="MinTemperatureRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:MinTemperatureResponse"
+				name="MinTemperatureResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="TemperatureIndicatorSoap11"
+		type="tns:TemperatureIndicator">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="AvgTemperature">
+			<soap:operation soapAction="" />
+			<wsdl:input name="AvgTemperatureRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="AvgTemperatureResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="MaxTemperature">
+			<soap:operation soapAction="" />
+			<wsdl:input name="MaxTemperatureRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="MaxTemperatureResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ClosestToZeroTemperature">
+			<soap:operation soapAction="" />
+			<wsdl:input name="ClosestToZeroTemperatureRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ClosestToZeroTemperatureResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="MinTemperature">
+			<soap:operation soapAction="" />
+			<wsdl:input name="MinTemperatureRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="MinTemperatureResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="TemperatureIndicatorService">
+		<wsdl:port binding="tns:TemperatureIndicatorSoap11"
+			name="TemperatureIndicatorSoap11">
+			<soap:address location="http://localhost:8081/api" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
